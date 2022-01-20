@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Navigation.module.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import {Link} from 'react-router-dom'
 
 const Navigation = (props) => {
  
@@ -23,7 +24,7 @@ const Navigation = (props) => {
       <ul>
         {isAuthenticated && (
           <li>
-            <a href="/">Users</a>
+            <Link to="/entries">Entries</Link>
           </li>
         )}
         {isAuthenticated && (
