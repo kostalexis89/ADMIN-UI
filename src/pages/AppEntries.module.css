@@ -1,0 +1,15 @@
+.appLinks {
+   text-decoration: none;
+   color: inherit;
+}
+.appLinks:hover{
+    text-decoration: none;
+    color: #c93be6;
+ }
+ .container {
+    width: 100%;
+    max-width: 100vw;
+    padding: 3rem;
+    margin: 2rem auto;
+    margin-top: 200px;
+  }

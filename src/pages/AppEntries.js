@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import appData from "../app.json";
 import tagsData from "../tag.json";
+import {Link} from "react-router-dom"
 import axios from "axios";
 import Table from "react-bootstrap/Table";
+import classes from "./AppEntries.module.css"
+import Card from "../components/UI/Card/Card";
+
 
 export default function AppEntries() {
   const [appList, setAppList] = useState([]);
@@ -11,6 +15,11 @@ export default function AppEntries() {
   useEffect(() => {
     setAppList(appData.data);
     setTagList(tagsData.data);
+
+    //USING THE API
+    /*axios.post('')
+    */
+
   }, []);
 
   const result = appList.map((app, index) => {
@@ -25,18 +34,21 @@ export default function AppEntries() {
     return (
       <>
         {/* <p key={app.id}>{app.name}</p> */}
-        <tr key={app.id}>
-          <td>{index + 1}</td>
-          <td>{app.name}</td>
-          <td>{app.tagsID}</td>
-          <td>Delete Edit</td>
-        </tr>
+        
+            <tr key={app.id}>
+            <td>{index + 1}</td>
+            <td><Link className={classes.appLinks} to={`/entries/app/${app.id}`}>{app.name}</Link></td>
+            <td>{app.tagsID}</td>
+            <td>Delete Edit</td>
+            </tr>
+        
       </>
     );
   });
 
   return (
-    <Table striped bordered hover variant="dark">
+      <Card>
+    <Table striped bordered hover variant="dark" className={classes.container}>
       <thead>
         <tr>
           <th>#</th>
@@ -47,5 +59,6 @@ export default function AppEntries() {
       </thead>
       <tbody>{result}</tbody>
     </Table>
+    </Card>
   );
 }
