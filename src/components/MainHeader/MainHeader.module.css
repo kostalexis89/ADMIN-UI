@@ -18,3 +18,8 @@
 .main-header img {
   height: 50px;
 }
+@media only screen and (max-width: 514px) {
+  .main-header img {
+    display: none;
+  }
+}
