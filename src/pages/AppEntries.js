@@ -12,19 +12,34 @@ export default function AppEntries() {
   const [appList, setAppList] = useState([]);
   const [tagList, setTagList] = useState([]);
 
+  const deleteHandler = (id) => {
+    const newList = appList.filter((item) => item.id !== id);
+    setAppList(newList);
+    //also an axios delete
+    // axios.delete(`api/app/${id}`)
+    // .then((response)=>{
+    //   console.log(response)
+    // })
+    // .catch(err=>console.log(err))
+  }
+
+
   useEffect(() => {
     setAppList(appData.data);
     setTagList(tagsData.data);
 
-    //USING THE API
-    /*axios.post('')
-    */
+    //USING THE API 
+    // axios.get('/api/app')
+		// 	.then(response => {
+		// 		console.log(response)
+		// 		setappList(response.data)
+		// 	})
+		// 	.catch(err => console.log(err))
 
   }, []);
 
   const result = appList.map((app, index) => {
     for (let i = 0; i < app.tagsID.length; i++) {
-      console.log(app.tagsID[i]);
       for(let j=0; j< tagList.length;j++){
         if(tagList[j].id===app.tagsID[i]){
             app.tagsID[i] = tagList[j].name + "   "
@@ -39,7 +54,7 @@ export default function AppEntries() {
             <td>{index + 1}</td>
             <td><Link className={classes.appLinks} to={`/entries/app/${app.id}`}>{app.name}</Link></td>
             <td>{app.tagsID}</td>
-            <td>Delete Edit</td>
+            <td className={classes.actionsContainer}><span>&#x270E;</span><span onClick={()=>deleteHandler(app.id)}>&#x2613;</span></td>
             </tr>
         
       </>

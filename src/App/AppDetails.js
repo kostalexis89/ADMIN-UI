@@ -8,7 +8,6 @@ import Card from '../components/UI/Card/Card';
 export default function AppDetails() {
   const [appDetails, setAppDetails] = useState(null)
   const { id } = useParams()
-  console.log(id)
 
   useEffect(()=>{
     // axios.get(`/api/app/${id}`)
