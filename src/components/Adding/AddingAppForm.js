@@ -15,9 +15,12 @@ export default function AddingAppForm(props) {
     setEnteredTags(Array.isArray(e)?e.map(x=>x.label):[])
   };
 
-  console.log(enteredTags)
   const addingAppHandler = (e) => {
     e.preventDefault();
+    props.addingAppHandler(enteredApp,enteredTags)
+    setEnteredApp('')
+    props.cancelHandler()
+
   };
 
   const listOfTags = props.tagList.map((tag) => {
@@ -25,7 +28,6 @@ export default function AddingAppForm(props) {
       {value:tag.name,label:tag.name}
     );
   });
-  console.log(listOfTags)
   return (
     <Form onSubmit={addingAppHandler}>
       <Form.Group className="mb-3" controlId="formBasicEmail">

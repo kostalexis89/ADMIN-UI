@@ -12,11 +12,20 @@ import Adding from "../components/Adding/Adding";
 export default function AppEntries() {
   const [appList, setAppList] = useState([]);
   const [tagList, setTagList] = useState([]);
+console.log(appList)
 
+  const addingAppHandler = (enteredApp,enteredTags) => {
+    
+    console.log(enteredApp)
+    console.log(enteredTags)
+    setAppList((prev)=>{
+      return [...prev, {
+        id: enteredApp,
+        name: enteredApp,
+        tagsID: enteredTags
+      }]
+    })
 
-  const addingAppHandler = (e) => {
-    e.preventDefault()
-    console.log(e.target.value)
   }
 
   const deleteHandler = (id) => {
