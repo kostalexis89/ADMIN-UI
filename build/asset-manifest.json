@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.1deb540b.css",
-    "main.js": "/static/js/main.c589e3fb.js",
+    "main.css": "/static/css/main.d10d9cb5.css",
+    "main.js": "/static/js/main.291f40b1.js",
     "static/js/787.17bcc3ab.chunk.js": "/static/js/787.17bcc3ab.chunk.js",
     "static/media/logoEthinking.png": "/static/media/logoEthinking.ce3464caddf92b1daf1c.png",
     "index.html": "/index.html",
-    "main.1deb540b.css.map": "/static/css/main.1deb540b.css.map",
-    "main.c589e3fb.js.map": "/static/js/main.c589e3fb.js.map",
+    "main.d10d9cb5.css.map": "/static/css/main.d10d9cb5.css.map",
+    "main.291f40b1.js.map": "/static/js/main.291f40b1.js.map",
     "787.17bcc3ab.chunk.js.map": "/static/js/787.17bcc3ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1deb540b.css",
-    "static/js/main.c589e3fb.js"
+    "static/css/main.d10d9cb5.css",
+    "static/js/main.291f40b1.js"
   ]
 }

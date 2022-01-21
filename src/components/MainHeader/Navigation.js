@@ -29,11 +29,6 @@ const Navigation = (props) => {
         )}
         {isAuthenticated && (
           <li>
-            <a href="/">Admin</a>
-          </li>
-        )}
-        {isAuthenticated && (
-          <li>
             <button onClick={logoutHandler}>Logout</button>
           </li>
         )}

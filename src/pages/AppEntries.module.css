@@ -11,9 +11,18 @@
     max-width: 100vw;
     padding: 3rem;
     margin: 2rem auto;
-    margin-top: 200px;
+    margin-top: 50px;
   }
 
   .actionsContainer span {
    margin-right: 10px;
   }
+
+  .btnContainer {
+     display: flex;
+     justify-content: center;
+     padding-top: 35px;
+  }
+  .btnContainer Button{
+   margin-right: 25px;
+}
